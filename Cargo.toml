@@ -1,0 +1,22 @@
+[package]
+name = "image-effects"
+version = "0.1.0"
+edition = "2021"
+
+# be able to call Rust functions from other languages
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# helps export Rust functions into JavaScript (vice versa)
+[dependencies]
+wasm-bindgen = "0.2.83"
+base64 = "0.13.1"
+image = "0.23.14"
+
+
+# We have an option of partially importing features we need from a crate => don't need to download the entire package
+[dependencies.web-sys]
+version = "0.3.60"
+features = ["console"]
